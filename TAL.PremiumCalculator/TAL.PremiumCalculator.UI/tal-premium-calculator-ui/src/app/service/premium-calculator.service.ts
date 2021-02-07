@@ -10,8 +10,14 @@ import { PremiumParameters } from '../Class/premiumparameters';
 export class PremiumCalculatorService {
   ApiUrl = 'http://localhost:49978/Api';    
   constructor(private http:HttpClient) { }    
+
   getOccupations():Observable<Occupation[]>    
   {    
     return this.http.get<Occupation[]>(this.ApiUrl + '/Premium/GetOccupations');    
   }  
-} 
+
+  getPremiumValue(premiumparameters: PremiumParameters)   
+  {    
+    return this.http.post(this.ApiUrl + '/Premium/GetPremiumValue', premiumparameters).toPromise();
+  }  
+}

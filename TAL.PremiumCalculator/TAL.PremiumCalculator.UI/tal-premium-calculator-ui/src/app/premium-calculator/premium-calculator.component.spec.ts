@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { PremiumCalculatorComponent } from './premium-calculator.component';
 
@@ -8,7 +10,11 @@ describe('PremiumCalculatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PremiumCalculatorComponent ]
+      declarations: [ PremiumCalculatorComponent ],
+      imports: [
+        HttpClientModule,
+        FormsModule
+      ],
     })
     .compileComponents();
   });

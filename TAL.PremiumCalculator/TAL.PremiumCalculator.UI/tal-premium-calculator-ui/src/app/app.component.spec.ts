@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'tal-premium-calculator-ui'`, () => {
+  it(`should have as title 'TAL Premium Calculator'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('tal-premium-calculator-ui');
+    expect(app.title).toEqual('TAL Premium Calculator');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('tal-premium-calculator-ui app is running!');
+    expect(compiled.querySelector('.navbar-brand').textContent).toContain(' Welcome to TAL Premium Calculator!');
   });
 });

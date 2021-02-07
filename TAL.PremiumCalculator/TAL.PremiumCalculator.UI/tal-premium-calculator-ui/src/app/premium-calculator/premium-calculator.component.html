@@ -8,6 +8,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <form #premiumForm="ngForm" class="formContainer">
+                        <div *ngIf="isError" class="alert alert-danger">
+                            <div class="float-right" style="cursor: pointer" (click)="isError = !isError">x</div>
+                            <strong>Internal Server Error! Please try again! 
+                            </strong>
+                        </div>
+                        <div *ngIf="isValidationError" class="alert alert-danger">
+                            <div class="float-right" style="cursor: pointer" (click)="isError = !isError">x</div>
+                            <strong>Please enter all the fields are entered
+                            </strong>
+                        </div>
                         <div class="row form-group justify-content-center">
                             <div class="col-4">
                                 <label for="name">Name</label>
@@ -16,6 +26,9 @@
                             <div class="col-4">
                                 <input type="text" class="form-control" [(ngModel)]="premiumParamModel.Name" name="Name"
                                     id="name" placeholder="Enter name" pattern="^[a-zA-Z]*" required>
+                                <div class="text-danger" *ngIf="formErrors.Name">
+                                    <small>{{formErrors.Name}}</small>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group justify-content-center">
@@ -26,6 +39,9 @@
                             <div class="col-4">
                                 <input type="number" class="form-control" [(ngModel)]="premiumParamModel.Age" name="Age"
                                     id="age" placeholder="Enter age" pattern="^[0-9]*$" required>
+                                <div class="text-danger" *ngIf="formErrors.Age">
+                                    <small> {{formErrors.Age}} </small>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group justify-content-center">
@@ -36,6 +52,9 @@
                             <div class="col-4">
                                 <input type="date" class="form-control" [(ngModel)]="premiumParamModel.DOB" name="DOB" id="dob"
                                     placeholder="Enter dob" required>
+                                <div class="text-danger" *ngIf="formErrors.DOB">
+                                    <small> {{formErrors.DOB}} </small>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group justify-content-center">
@@ -46,6 +65,9 @@
                             <div class="col-4">
                                 <input type="text" class="form-control" [(ngModel)]="premiumParamModel.SumInsured"
                                     name="DeathInsured" id="DeathInsured" placeholder="Death Sum Insured" pattern="^[0-9]*$" required>
+                                <div class="text-danger" *ngIf="formErrors.DeathInsured">
+                                    <small> {{formErrors.DeathInsured}} </small>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group justify-content-center">
@@ -55,10 +77,18 @@
                             </div>
                             <div class="col-4">
                                 <select id="occupation" name="Occupation" class="form-control"
-                                    (change)="calculatePremium()" required>
+                                    (change)="calculatePremium($event)" required>
                                     <option value="0" selected>-- Choose -- </option>
                                     <option *ngFor="let o of allOccupations" [value]="o.Id">{{o.OccupationName}}</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="monthlyPremium">Monthly Premium Calculated: </label>
+                            </div>
+                            <div class="col-4">
+                                <span> {{monthlyPremium | currency}} </span>
                             </div>
                         </div>
                     </form>
@@ -67,4 +97,4 @@
         </div>
     </div>
   </div>
-
+x

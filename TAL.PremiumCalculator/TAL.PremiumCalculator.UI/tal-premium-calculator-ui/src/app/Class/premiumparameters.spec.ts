@@ -1,7 +1,7 @@
-import { Premiumparameters } from './premiumparameters';
+import { PremiumParameters } from './premiumparameters';
 
 describe('Premiumparameters', () => {
   it('should create an instance', () => {
-    expect(new Premiumparameters()).toBeTruthy();
+    expect(new PremiumParameters()).toBeTruthy();
   });
 });
