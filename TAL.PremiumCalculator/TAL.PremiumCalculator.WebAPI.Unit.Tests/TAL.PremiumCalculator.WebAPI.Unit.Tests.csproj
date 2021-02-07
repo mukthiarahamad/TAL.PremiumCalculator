@@ -85,10 +85,6 @@
       <Project>{e9c0b9bd-5dde-41fe-b643-b21122cf1b66}</Project>
       <Name>TAL.PremiumCalculator.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.vbproj">
-      <Project>{6f97cdf0-d504-433b-bc0b-ca34bdc0e060}</Project>
-      <Name>TAL.PremiumCalculator.WebAPI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
