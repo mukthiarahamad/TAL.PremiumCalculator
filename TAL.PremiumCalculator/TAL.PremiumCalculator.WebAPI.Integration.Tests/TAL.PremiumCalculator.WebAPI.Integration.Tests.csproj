@@ -49,11 +49,24 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAL.PremiumCalculator.BLL\TAL.PremiumCalculator.BLL.csproj">
+      <Project>{a2e351ad-2a21-483e-9f12-d5ba3221bc9c}</Project>
+      <Name>TAL.PremiumCalculator.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.PremiumCalculator.DAL\TAL.PremiumCalculator.DAL.csproj">
+      <Project>{e9c0b9bd-5dde-41fe-b643-b21122cf1b66}</Project>
+      <Name>TAL.PremiumCalculator.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.vbproj">
+      <Project>{6f97cdf0-d504-433b-bc0b-ca34bdc0e060}</Project>
+      <Name>TAL.PremiumCalculator.WebAPI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

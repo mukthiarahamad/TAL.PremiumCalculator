@@ -92,6 +92,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\PremiumDB.mdf" />
+    <Content Include="App_Data\PremiumDB_log.ldf">
+      <DependentUpon>PremiumDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +144,19 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAL.PremiumCalculator.BLL\TAL.PremiumCalculator.BLL.csproj">
+      <Project>{a2e351ad-2a21-483e-9f12-d5ba3221bc9c}</Project>
+      <Name>TAL.PremiumCalculator.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TAL.PremiumCalculator.DAL\TAL.PremiumCalculator.DAL.csproj">
+      <Project>{e9c0b9bd-5dde-41fe-b643-b21122cf1b66}</Project>
+      <Name>TAL.PremiumCalculator.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
