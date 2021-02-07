@@ -80,6 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Tal\TALPremiumCalculator\TAL.Premium.Calculator\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.csproj">
+      <Project>{47449a05-59f4-4ef7-9a88-e75d372e5459}</Project>
+      <Name>TAL.PremiumCalculator.WebAPI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TAL.PremiumCalculator.BLL\TAL.PremiumCalculator.BLL.csproj">
       <Project>{a2e351ad-2a21-483e-9f12-d5ba3221bc9c}</Project>
       <Name>TAL.PremiumCalculator.BLL</Name>
@@ -87,10 +91,6 @@
     <ProjectReference Include="..\TAL.PremiumCalculator.DAL\TAL.PremiumCalculator.DAL.csproj">
       <Project>{e9c0b9bd-5dde-41fe-b643-b21122cf1b66}</Project>
       <Name>TAL.PremiumCalculator.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TAL.PremiumContoller.WebAPI\TAL.PremiumContoller.WebAPI.csproj">
-      <Project>{ab669a9d-9445-4b1e-bc82-d1494085ddab}</Project>
-      <Name>TAL.PremiumContoller.WebAPI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

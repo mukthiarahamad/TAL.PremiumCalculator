@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.DAL",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI.Integration.Tests", "TAL.PremiumCalculator.WebAPI.Integration.Tests\TAL.PremiumCalculator.WebAPI.Integration.Tests.csproj", "{FF1061A5-0795-4304-9662-07555B35C2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumContoller.WebAPI", "TAL.PremiumContoller.WebAPI\TAL.PremiumContoller.WebAPI.csproj", "{AB669A9D-9445-4B1E-BC82-D1494085DDAB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI.Unit.Tests", "TAL.PremiumCalculator.WebAPI.Unit.Tests\TAL.PremiumCalculator.WebAPI.Unit.Tests.csproj", "{30B521D0-8181-4C32-AA47-50E98719457E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI", "..\..\..\..\..\Tal\TALPremiumCalculator\TAL.Premium.Calculator\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.csproj", "{47449A05-59F4-4EF7-9A88-E75D372E5459}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{FF1061A5-0795-4304-9662-07555B35C2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF1061A5-0795-4304-9662-07555B35C2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF1061A5-0795-4304-9662-07555B35C2E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB669A9D-9445-4B1E-BC82-D1494085DDAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB669A9D-9445-4B1E-BC82-D1494085DDAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB669A9D-9445-4B1E-BC82-D1494085DDAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB669A9D-9445-4B1E-BC82-D1494085DDAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{30B521D0-8181-4C32-AA47-50E98719457E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{30B521D0-8181-4C32-AA47-50E98719457E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30B521D0-8181-4C32-AA47-50E98719457E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30B521D0-8181-4C32-AA47-50E98719457E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47449A05-59F4-4EF7-9A88-E75D372E5459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47449A05-59F4-4EF7-9A88-E75D372E5459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47449A05-59F4-4EF7-9A88-E75D372E5459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47449A05-59F4-4EF7-9A88-E75D372E5459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

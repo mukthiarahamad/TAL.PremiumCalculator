@@ -1,1 +1,70 @@
-<p>premium-calculator works!</p>
+<div class="card">
+    <div class="card-header">
+        Premium is calculated based on the selections below
+      </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">All Fields are mandatory</h6>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form #premiumForm="ngForm" class="formContainer">
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="name">Name</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control" [(ngModel)]="premiumParamModel.Name" name="Name"
+                                    id="name" placeholder="Enter name" pattern="^[a-zA-Z]*" required>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="age">Age</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <input type="number" class="form-control" [(ngModel)]="premiumParamModel.Age" name="Age"
+                                    id="age" placeholder="Enter age" pattern="^[0-9]*$" required>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="dob">Date of Birth</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <input type="date" class="form-control" [(ngModel)]="premiumParamModel.DOB" name="DOB" id="dob"
+                                    placeholder="Enter dob" required>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="deathSumInsured">Death Sum Insured</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control" [(ngModel)]="premiumParamModel.SumInsured"
+                                    name="DeathInsured" id="DeathInsured" placeholder="Death Sum Insured" pattern="^[0-9]*$" required>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
+                                <label for="occupation">Occupation</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <select id="occupation" name="Occupation" class="form-control"
+                                    (change)="calculatePremium()" required>
+                                    <option value="0" selected>-- Choose -- </option>
+                                    <option *ngFor="let o of allOccupations" [value]="o.Id">{{o.OccupationName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

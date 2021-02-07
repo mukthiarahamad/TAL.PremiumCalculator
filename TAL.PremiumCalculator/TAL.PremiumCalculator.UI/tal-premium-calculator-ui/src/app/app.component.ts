@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
- title = 'TAL Premium Calculator';
+  title = 'TAL Premium Calculator';
 }
