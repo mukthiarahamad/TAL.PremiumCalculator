@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TAL.PremiumCalculator.WebAPI", "TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.vbproj", "{6F97CDF0-D504-433B-BC0B-CA34BDC0E060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.BLL", "TAL.PremiumCalculator.BLL\TAL.PremiumCalculator.BLL.csproj", "{A2E351AD-2A21-483E-9F12-D5BA3221BC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.DAL", "TAL.PremiumCalculator.DAL\TAL.PremiumCalculator.DAL.csproj", "{E9C0B9BD-5DDE-41FE-B643-B21122CF1B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI.Integration.Tests", "TAL.PremiumCalculator.WebAPI.Integration.Tests\TAL.PremiumCalculator.WebAPI.Integration.Tests.csproj", "{FF1061A5-0795-4304-9662-07555B35C2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI.Unit.Tests", "TAL.PremiumCalculator.WebAPI.Unit.Tests\TAL.PremiumCalculator.WebAPI.Unit.Tests.csproj", "{E961A0E6-C49E-4E71-A37C-781E8F922563}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F97CDF0-D504-433B-BC0B-CA34BDC0E060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F97CDF0-D504-433B-BC0B-CA34BDC0E060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F97CDF0-D504-433B-BC0B-CA34BDC0E060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F97CDF0-D504-433B-BC0B-CA34BDC0E060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E351AD-2A21-483E-9F12-D5BA3221BC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E351AD-2A21-483E-9F12-D5BA3221BC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E351AD-2A21-483E-9F12-D5BA3221BC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E351AD-2A21-483E-9F12-D5BA3221BC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9C0B9BD-5DDE-41FE-B643-B21122CF1B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9C0B9BD-5DDE-41FE-B643-B21122CF1B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9C0B9BD-5DDE-41FE-B643-B21122CF1B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9C0B9BD-5DDE-41FE-B643-B21122CF1B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1061A5-0795-4304-9662-07555B35C2E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1061A5-0795-4304-9662-07555B35C2E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1061A5-0795-4304-9662-07555B35C2E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1061A5-0795-4304-9662-07555B35C2E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E961A0E6-C49E-4E71-A37C-781E8F922563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E961A0E6-C49E-4E71-A37C-781E8F922563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E961A0E6-C49E-4E71-A37C-781E8F922563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E961A0E6-C49E-4E71-A37C-781E8F922563}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1CF151D-BB57-4ACC-A1D6-A23D0103D459}
+	EndGlobalSection
+EndGlobal
