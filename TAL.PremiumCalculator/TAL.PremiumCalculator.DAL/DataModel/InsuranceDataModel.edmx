@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PremiumDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="OccupationName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OccupationRatingId" Type="int" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OccupationRating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Factor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Occupation_OccupationRating">
+          <End Role="OccupationRating" Type="Self.OccupationRating" Multiplicity="1" />
+          <End Role="Occupation" Type="Self.Occupation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OccupationRating">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Occupation">
+              <PropertyRef Name="OccupationRatingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PremiumDBModelStoreContainer">
+          <EntitySet Name="Occupation" EntityType="Self.Occupation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OccupationRating" EntityType="Self.OccupationRating" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Occupation_OccupationRating" Association="Self.FK_Occupation_OccupationRating">
+            <End Role="OccupationRating" EntitySet="OccupationRating" />
+            <End Role="Occupation" EntitySet="Occupation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PremiumDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Occupation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="OccupationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OccupationRatingId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OccupationRating" Relationship="Self.FK_Occupation_OccupationRating" FromRole="Occupation" ToRole="OccupationRating" />
+        </EntityType>
+        <EntityType Name="OccupationRating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Factor" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Occupations" Relationship="Self.FK_Occupation_OccupationRating" FromRole="OccupationRating" ToRole="Occupation" />
+        </EntityType>
+        <Association Name="FK_Occupation_OccupationRating">
+          <End Role="OccupationRating" Type="Self.OccupationRating" Multiplicity="1" />
+          <End Role="Occupation" Type="Self.Occupation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OccupationRating">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Occupation">
+              <PropertyRef Name="OccupationRatingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PremiumDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Occupations" EntityType="Self.Occupation" />
+          <EntitySet Name="OccupationRatings" EntityType="Self.OccupationRating" />
+          <AssociationSet Name="FK_Occupation_OccupationRating" Association="Self.FK_Occupation_OccupationRating">
+            <End Role="OccupationRating" EntitySet="OccupationRatings" />
+            <End Role="Occupation" EntitySet="Occupations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PremiumDBModelStoreContainer" CdmEntityContainer="PremiumDBEntities">
+          <EntitySetMapping Name="Occupations">
+            <EntityTypeMapping TypeName="PremiumDBModel.Occupation">
+              <MappingFragment StoreEntitySet="Occupation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OccupationName" ColumnName="OccupationName" />
+                <ScalarProperty Name="OccupationRatingId" ColumnName="OccupationRatingId" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OccupationRatings">
+            <EntityTypeMapping TypeName="PremiumDBModel.OccupationRating">
+              <MappingFragment StoreEntitySet="OccupationRating">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
