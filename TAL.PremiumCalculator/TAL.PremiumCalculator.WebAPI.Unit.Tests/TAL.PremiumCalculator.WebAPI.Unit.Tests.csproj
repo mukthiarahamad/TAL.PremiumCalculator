@@ -80,7 +80,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Tal\TALPremiumCalculator\TAL.Premium.Calculator\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.csproj">
+    <ProjectReference Include="..\TAL.PremiumContoller.WebAPI\TAL.PremiumCalculator.WebAPI.csproj">
       <Project>{47449a05-59f4-4ef7-9a88-e75d372e5459}</Project>
       <Name>TAL.PremiumCalculator.WebAPI</Name>
     </ProjectReference>

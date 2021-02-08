@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI.Unit.Tests", "TAL.PremiumCalculator.WebAPI.Unit.Tests\TAL.PremiumCalculator.WebAPI.Unit.Tests.csproj", "{30B521D0-8181-4C32-AA47-50E98719457E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI", "..\..\..\..\..\Tal\TALPremiumCalculator\TAL.Premium.Calculator\TAL.PremiumCalculator.WebAPI\TAL.PremiumCalculator.WebAPI.csproj", "{47449A05-59F4-4EF7-9A88-E75D372E5459}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAL.PremiumCalculator.WebAPI", "TAL.PremiumContoller.WebAPI\TAL.PremiumCalculator.WebAPI.csproj", "{47449A05-59F4-4EF7-9A88-E75D372E5459}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
