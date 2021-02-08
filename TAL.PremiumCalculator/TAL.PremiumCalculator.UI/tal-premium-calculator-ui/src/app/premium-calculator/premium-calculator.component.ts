@@ -16,6 +16,7 @@ export class PremiumCalculatorComponent implements OnInit, AfterViewChecked {
   monthlyPremium = 0.0;
   isError: boolean = false;
   isValidationError: boolean = false;
+  isOccupationLoaded: boolean = false;
   allOccupations: Occupation[];
   premiumParamModel:PremiumParameters; 
 
@@ -28,7 +29,7 @@ export class PremiumCalculatorComponent implements OnInit, AfterViewChecked {
 
   ngAfterViewChecked() {
     this.formChanged();
-    if(this.premiumForm.valid && this.isValidationError) {
+    if(this.premiumForm?.valid && this.isValidationError) {
       this.isValidationError = !this.isValidationError;
       return;
     }
@@ -104,11 +105,13 @@ export class PremiumCalculatorComponent implements OnInit, AfterViewChecked {
   loadAllOccupations() {
     this.premiumCalculatorService.getOccupations().subscribe(result => {
       this.allOccupations = result;
+      this.isOccupationLoaded = true;
     }, error => {
         // we can catch different exceptions according to error codes
         // for now just implemented general exception
         console.log(error);
         this.isError = true;
+        this.isOccupationLoaded = true;
       });
   }
 

@@ -7,7 +7,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form #premiumForm="ngForm" class="formContainer">
+                    <div class="d-flex align-items-center" *ngIf="!isOccupationLoaded">
+                        <strong>Loading...</strong>
+                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                      </div>
+
+                    <form *ngIf="isOccupationLoaded"  #premiumForm="ngForm" class="formContainer">
                         <div *ngIf="isError" class="alert alert-danger">
                             <div class="float-right" style="cursor: pointer" (click)="isError = !isError">x</div>
                             <strong>Internal Server Error! Please try again! 
