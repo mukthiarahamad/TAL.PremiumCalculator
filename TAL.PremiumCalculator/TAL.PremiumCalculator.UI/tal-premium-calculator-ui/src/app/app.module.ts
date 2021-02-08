@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PremiumCalculatorComponent } from './premium-calculator/premium-calculator.component';
+import {  CurrencyPipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { PremiumCalculatorComponent } from './premium-calculator/premium-calcula
     HttpClientModule, 
     AppRoutingModule
   ],
-  providers: [HttpClientModule, PremiumCalculatorService],
+  providers: [HttpClientModule, PremiumCalculatorService, CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

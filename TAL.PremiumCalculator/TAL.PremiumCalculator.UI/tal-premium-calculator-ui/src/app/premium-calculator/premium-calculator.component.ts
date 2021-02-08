@@ -3,6 +3,7 @@ import { PremiumCalculatorService } from '../service/premium-calculator.service'
 import { Occupation } from '../Class/occupation';
 import { NgForm } from '@angular/forms';
 import { PremiumParameters } from '../Class/premiumparameters';
+import { CurrencyPipe} from '@angular/common';
 
 @Component({
   selector: 'app-premium-calculator',
@@ -19,12 +20,15 @@ export class PremiumCalculatorComponent implements OnInit, AfterViewChecked {
   isOccupationLoaded: boolean = false;
   allOccupations: Occupation[];
   premiumParamModel:PremiumParameters; 
+  dateOfBirth: string;
+  formattedAmount: any;
 
-  constructor(private premiumCalculatorService: PremiumCalculatorService) { }
+  constructor(private premiumCalculatorService: PremiumCalculatorService,private currencyPipe : CurrencyPipe) { }
 
   ngOnInit() {
     this.premiumParamModel =  new PremiumParameters();
     this.loadAllOccupations();
+    this.dateOfBirth = new Date().toISOString().slice(0, 10);
   }
 
   ngAfterViewChecked() {
@@ -34,6 +38,18 @@ export class PremiumCalculatorComponent implements OnInit, AfterViewChecked {
       return;
     }
   }
+
+  calculateAge() {
+    if (this.premiumParamModel.DOB) {
+      var timeDiff = Math.abs(Date.now() - new Date(this.premiumParamModel.DOB).getTime());
+         this.premiumParamModel.Age = Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25);
+        }
+  }
+
+  transformAmount(element: any){
+    this.formattedAmount = this.currencyPipe.transform(this.premiumParamModel.SumInsured, '$');
+    element.target.value = this.formattedAmount;
+}
 
   formChanged() {
     if(this.currentForm == this.premiumForm){

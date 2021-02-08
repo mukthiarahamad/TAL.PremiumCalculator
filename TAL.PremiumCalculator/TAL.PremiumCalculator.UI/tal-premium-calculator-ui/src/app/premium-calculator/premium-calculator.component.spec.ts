@@ -55,5 +55,14 @@ describe('PremiumCalculatorComponent', () => {
     component.calculatePremium(event);
   });
 
+  it('should test transformAmount', () => {
+    const event = { target: { value: 42111111 }}; 
+    component.transformAmount(event);
+  });
+
+  it('should calculate the premium using calculatePremium', () => {
+    component.premiumParamModel.DOB = new Date('2019-02-04');
+    component.calculateAge();
+  });
   
 });
