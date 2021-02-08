@@ -39,7 +39,7 @@ There are different projects in the solution as follows:
 5) WebAPI Unit Tests project
 6) WebAPI Integration Tests Project
 
-# WebApi project (TAL.PremiumCalculator.WebAPI)
+# WebApi project (TAL.PremiumCalculator.WebAPI) - Set this project as the StartUp project
  - This has been implemented with Microsoft WebApi2
  - Used SQL Server database file to hold the data
  - Created two tables with data namely Occupation and Occupation Factor with the relevant keys
@@ -48,12 +48,6 @@ There are different projects in the solution as follows:
  - Implemented exception handling for the controller methods 
  - Implemented Async programming for the methods
  - Implemented Error logging with package Log4Net.
- 
-## Build & Run
-
-Check out the code and build the WebAPI solution and run the WebAPI first.
-Please hit the below URL to check if the WebAPI is running successfully
-http://localhost:49978/api/MonthlyPremium/GetOccupations
  
 # DAL layer (TAL.PremiumCalculator.DAL)
   - Create Entity model with entity framework
@@ -73,6 +67,12 @@ http://localhost:49978/api/MonthlyPremium/GetOccupations
  - Testcases has been written using Moq mocking framework.
 
 ![Alt text](UnitAndIntegrationTests.png?raw=true "Unit test and integration results")
+
+## Build & Run
+
+Check out the code and build the WebAPI solution and run the WebAPI first.
+Please hit the below URL to check if the WebAPI is running successfully
+http://localhost:49978/api/MonthlyPremium/GetOccupations
 
 # Front End with Angular 11 (TAL.PremiumCalculator.UI)
 
