@@ -15,7 +15,7 @@
                     <form *ngIf="isOccupationLoaded"  #premiumForm="ngForm" class="formContainer">
                         <div *ngIf="isError" class="alert alert-danger">
                             <div class="float-right" style="cursor: pointer" (click)="isError = !isError">x</div>
-                            <strong>Internal Server Error! Please try again! 
+                            <strong>Could not connect to the API service. Please ensure the API service has started before accessing the user interface.
                             </strong>
                         </div>
                         <div *ngIf="isValidationError" class="alert alert-danger">
@@ -38,6 +38,19 @@
                         </div>
                         <div class="row form-group justify-content-center">
                             <div class="col-4">
+                                <label for="dob">Date of Birth</label>
+                                <span class="text-danger">*</span>
+                            </div>
+                            <div class="col-4">
+                                <input type="date" class="form-control" [(ngModel)]="premiumParamModel.DOB" name="DOB" id="dob"
+                                    placeholder="Enter dob" max="{{this.dateOfBirth}}" (change)="calculateAge()" required>
+                                <div class="text-danger" *ngIf="formErrors.DOB">
+                                    <small> {{formErrors.DOB}} </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group justify-content-center">
+                            <div class="col-4">
                                 <label for="age">Age</label>
                                 <span class="text-danger">*</span>
                             </div>
@@ -49,19 +62,6 @@
                                     </div>
                                     <div class="text-danger" *ngIf="formErrors.Age">
                                     <small> {{formErrors.Age}} </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group justify-content-center">
-                            <div class="col-4">
-                                <label for="dob">Date of Birth</label>
-                                <span class="text-danger">*</span>
-                            </div>
-                            <div class="col-4">
-                                <input type="date" class="form-control" [(ngModel)]="premiumParamModel.DOB" name="DOB" id="dob"
-                                    placeholder="Enter dob" max="{{this.dateOfBirth}}" (change)="calculateAge()" required>
-                                <div class="text-danger" *ngIf="formErrors.DOB">
-                                    <small> {{formErrors.DOB}} </small>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                                 <label for="monthlyPremium">Monthly Premium Calculated: </label>
                             </div>
                             <div class="col-4">
-                                <span> {{monthlyPremium |  currency:'AUD':''}} </span>
+                                <span> {{monthlyPremium |  currency:'AUD':'symbol':'1.2-2'}} </span>
                             </div>
                         </div>
                     </form>

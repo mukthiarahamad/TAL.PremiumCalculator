@@ -22,6 +22,18 @@ namespace TAL.PremiumCalculator.WebAPI.Controllers
             _premiumCalculatorBLL = premiumCalculatorBLL;
         }
 
+
+        [HttpGet]
+        [ActionName("Index")]
+        public HttpResponseMessage Index()
+        {
+            var response = new HttpResponseMessage()
+            {
+                Content = new StringContent("The Web API has started, Please start the UI Interface."),
+            };
+            return response;
+        }
+
         [HttpGet]
         [ActionName("GetOccupations")]
         public async Task<IHttpActionResult> GetOccupations()
